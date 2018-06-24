@@ -29,7 +29,6 @@ public class MainController {
 
         WeatherModel weatherModel = weatherService.makeCall(cityName);
 
-//        model.addAttribute("weatherInfo", weatherService.makeCall(cityName).toString());
         model.addAttribute("city", cityName.toString());
         model.addAttribute("temperature", weatherService.temperature(weatherModel) + " *C");
         System.out.println(weatherService.temperature(weatherModel));
