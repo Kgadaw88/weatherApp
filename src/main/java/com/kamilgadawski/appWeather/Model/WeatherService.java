@@ -20,4 +20,8 @@ public class WeatherService {
     public WeatherModel makeCall(String city){
         return restTemplate.getForObject("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + appKey, WeatherModel.class);
     }
+
+    public String temperature(WeatherModel weatherModel){
+        return String.format("%.1f", weatherModel.getGlobalStats().getTemperature() - 273.15);
+    }
 }

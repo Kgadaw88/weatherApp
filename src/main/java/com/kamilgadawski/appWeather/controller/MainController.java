@@ -1,6 +1,7 @@
 package com.kamilgadawski.appWeather.controller;
 
 
+import com.kamilgadawski.appWeather.Model.WeatherModel.WeatherModel;
 import com.kamilgadawski.appWeather.Model.WeatherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,14 +19,20 @@ public class MainController {
     }
 
     @GetMapping("/")
-    public String index(){
+    public String index() {
         return "index";
     }
 
     @PostMapping("/")
     public String index(@RequestParam("city") String cityName,
-                        Model model){
-        model.addAttribute("weatherInfo", weatherService.makeCall(cityName).toString());
+                        Model model) {
+
+        WeatherModel weatherModel = weatherService.makeCall(cityName);
+
+//        model.addAttribute("weatherInfo", weatherService.makeCall(cityName).toString());
+        model.addAttribute("city", cityName.toString());
+        model.addAttribute("temperature", weatherService.temperature(weatherModel) + " *C");
+        System.out.println(weatherService.temperature(weatherModel));
         return "index";
     }
 }

@@ -10,7 +10,11 @@
             <input th:name="city" placeholder="Podaj miasto">
             <input type="submit" value="Pokaż pogodę">
         </form>
-        <span th:if="${weatherInfo} != null" th:text="${weatherInfo}"></span>
+        <!--<span th:if="${weatherInfo} != null" th:text="${weatherInfo}"></span>-->
+        <div>
+            <h2>Pogoda dla miasta: <span th:text="${city}"></span></h2>
+            <h4>Temperatura: <span th:text="${temperature}"></span></h4>
+        </div>
     </div>
 </body>
 </html>
