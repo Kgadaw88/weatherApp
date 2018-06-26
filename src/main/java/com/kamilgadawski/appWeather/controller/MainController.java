@@ -31,7 +31,8 @@ public class MainController {
 
         model.addAttribute("city", cityName.toString());
         model.addAttribute("temperature", weatherService.temperature(weatherModel) + " *C");
-        model.addAttribute("pressure", weatherService.pressure(weatherModel));
+        model.addAttribute("pressure", weatherService.pressure(weatherModel)+ " hPa");
+        model.addAttribute("humidity", weatherService.cloud(weatherModel) + " %");
         return "index";
     }
 }

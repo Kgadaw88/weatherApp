@@ -10,6 +10,8 @@ public class TempStats {
     private float temperature;
     @JsonProperty("pressure")
     private int pressure;
+    @JsonProperty("humidity")
+    private int clouds;
     @JsonProperty("temp_min")
     private float tempMin;
     @JsonProperty("temp_max")

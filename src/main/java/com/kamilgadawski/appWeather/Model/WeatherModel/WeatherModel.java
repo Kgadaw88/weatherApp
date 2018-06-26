@@ -8,6 +8,4 @@ public class WeatherModel {
 
     @JsonProperty("main")
     private TempStats globalStats;
-    @JsonProperty("clouds")
-    private CloudStats cloudStats;
 }
