@@ -24,13 +24,12 @@ public class WeatherService {
     public String temperature(WeatherModel weatherModel) {
         return String.format("%.1f", weatherModel.getGlobalStats().getTemperature() - 273.15);
     }
-
+    
     public int pressure(WeatherModel weatherModel) {
-
         return weatherModel.getGlobalStats().getPressure();
     }
 
-    public int cloud(WeatherModel weatherModel){
+    public int cloud(WeatherModel weatherModel) {
         return weatherModel.getGlobalStats().getClouds();
     }
 

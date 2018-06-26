@@ -12,8 +12,4 @@ public class TempStats {
     private int pressure;
     @JsonProperty("humidity")
     private int clouds;
-    @JsonProperty("temp_min")
-    private float tempMin;
-    @JsonProperty("temp_max")
-    private float tempMax;
 }
